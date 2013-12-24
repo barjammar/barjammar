@@ -19,7 +19,7 @@ cp capture-log.txt $SOURCEFOLDER
 echo "## Covert all file names to better date stamps ..." >> $LOGFILE
 for i in `ls $SOURCEFOLDER/camorama*`; do
 	EPOCH=`echo $i | cut -d "-" -f2 | cut -d "." -f1` 
-	DATE=`date -d @$EPOCH`
+	DATE=`date -d @$EPOCH "+%y-%m-%d_%A`
 	echo $DATE
 	mv "$i" "$SOURCEFOLDER/$DATE.jpeg"
 done
