@@ -4,12 +4,13 @@
 # This script will upload the latest webcam photos from gingin
 # to bajama perth server. It will then create a web album.
 ################################################################ 
-## Config
+## Add in Config
 LOGFILE='/home/barry/transfer.log'
 HOST='bajama.mine.nu'
 TARGETFOLDER='/home/barry/Webcam_Pictures/'
 SOURCEFOLDER='/home/barry/Webcam_Pictures/'
 
+# Startup script
 echo "###### Starting Tranfer Job #######" >> $LOGFILE
 echo "Upload.sh at $(date)" >> $LOGFILE
 ## Step 1 - copy the capture log file
@@ -31,5 +32,5 @@ rsync -avz --remove-source-files --log-file=$LOGFILE --stats -e ssh $SOURCEFOLDE
 echo "## Create the album ..." >> $LOGFILE
 ssh $HOST "/home/barry/make_album.sh" >> $LOGFILE
 
-## done
+## All done
 echo "###### Finished Tranfer Job at $(date) ######" >> $LOGFILE
