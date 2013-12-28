@@ -1,11 +1,17 @@
 #!/bin/bash
 ################################################################ 
-# archive script 
+# archive.sh script 
+# This script is designed to be run nightly by CRON and to
+# archive images first into a daily directory. Secondly this
+# script will archive all images into an archive directory
+# every Sunday.
 ################################################################ 
 ## Config
 HOMEDIR='/home/barry'
+## Should not need to modify below
 LOGFILE='$HOMEDIR/archive.log'
 SCR='$HOMEDIR/Webcam_Pictures'
+## This are internal variables
 DATE=`date --date "1 days ago" "+%y-%m-%d-%A"`
 DAYOFWEEK=`date +%u`
 
