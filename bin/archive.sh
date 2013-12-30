@@ -3,9 +3,9 @@
 # archive script 
 ################################################################ 
 ## Config
-HOMEDIR='/home/barry'
-LOGFILE='$HOMEDIR/archive.log'
-SCR='$HOMEDIR/Webcam_Pictures'
+HOMEDIR="/home/barry"
+LOGFILE="$HOMEDIR/archive.log"
+SCR="$HOMEDIR/Webcam_Pictures"
 DATE=`date --date "1 days ago" "+%y-%m-%d-%A"`
 DAYOFWEEK=`date +%u`
 
@@ -20,7 +20,7 @@ if [ $DAYOFWEEK eq '7' ]; then
 	if [ ! -d $SCR/archive ]; then
 		mkdir $SCR/archive
 	fi
-	find $SCR/. -type d -name "^1*" -exec mv {} $SRC/archive/ \;
+	find $SCR/. -type d -name "1*" -exec mv {} $SRC/archive/ \;
 fi
 $HOMEDIR/make_album.sh >> $LOGFILE
 ## done
