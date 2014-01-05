@@ -5,10 +5,11 @@
 # to bajama perth server. It will then create a web album.
 ################################################################ 
 ## Add in Config
-LOGFILE='/home/barry/transfer.log'
-HOST='bajama.mine.nu'
-TARGETFOLDER='/home/barry/Webcam_Pictures/'
-SOURCEFOLDER='/home/barry/Webcam_Pictures/'
+HOMEDIR="/home/barry"
+LOGFILE="$HOMEDIR/transfer.log"
+HOST="bajama.mine.nu"
+TARGETFOLDER="$HOMEDIR/Webcam_Pictures/"
+SOURCEFOLDER="$HOMEDIR/Webcam_Pictures/"
 
 # Startup script
 echo "###### Starting Tranfer Job #######" >> $LOGFILE
